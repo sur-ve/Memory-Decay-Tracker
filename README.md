@@ -40,7 +40,7 @@ The client interfaces with the server using standard proxy routing (`/api` mappe
   "practicedAt": 1774345732000,
   "practiceHistory": [1773913732000, 1774345732000]
 }
-
+```
 
 API Endpoints
 
