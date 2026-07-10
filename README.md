@@ -42,47 +42,43 @@ The client interfaces with the server using standard proxy routing (`/api` mappe
 }
 ```
 
-API Endpoints
+## API Endpoints
 
-    GET /api/skills — Retrieves all tracked skills from the Excel workbook.
+   * GET /api/skills — Retrieves all tracked skills from the Excel workbook.
+   * POST /api/skills — Creates a new skill entry and appends the calculated ID increment.
+   * PATCH /api/skills/:id — Updates specified skill properties or practice logs.
+   * DELETE /api/skills/:id — Purges the selected record from the system registry.
 
-    POST /api/skills — Creates a new skill entry and appends the calculated ID increment.
-
-    PATCH /api/skills/:id — Updates specified skill properties or practice logs.
-
-    DELETE /api/skills/:id — Purges the selected record from the system registry.
-
-🚀 Setup Instructions
-
+## 🚀 Setup Instructions
 Follow these instructions to spin up the local development environment:
 Prerequisites
 
 Ensure you have Node.js (v18+ recommended) installed on your system.
-1. Repository Installation
+
+# 1. Repository Installation
 
 Clone the repository and jump straight into the root working directory:
-Bash
 
+```bash
 git clone [https://github.com/YourUsername/skill-decay-lab.git](https://github.com/YourUsername/skill-decay-lab.git)
 cd skill-decay-lab
+```
 
-2. Backend Infrastructure Setup
+# 2. Backend Infrastructure Setup
 
 Navigate to the server directory, deploy dependencies, and kickstart the backend node process:
-Bash
-
+```bash
 cd server
 npm install
 npm start
+```
 
-Note: The backend service launches on http://localhost:3001. It will seamlessly generate data/skills.xlsx on its initial run.
-3. Frontend Interface Setup
+# 3. Frontend Interface Setup
 
 Open a second terminal window, move into the client architecture path, fetch packages, and run Vite's dev server:
-Bash
 
+```bash
 cd client
 npm install
 npm run dev
-
-Note: Vite opens the accessible UI layout (typically at http://localhost:5173). All client actions hitting /api route dynamically through the pre-configured dev proxy server directly to the Node instance.
+```
